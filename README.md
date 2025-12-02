@@ -47,3 +47,6 @@ AgriConnect solves these issues via a centralized Django web platform:
 * **Database:** SQLite (Dev) / 
 * **Frontend:** Django Templates (DTL) + Bootstrap 5 + C
 
+![WhatsApp Image 2025-11-28 at 12 43 12](https://github.com/user-attachments/assets/d3954153-6aed-4033-851d-c441c7e03e6c)
+
+

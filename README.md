@@ -52,7 +52,7 @@ AgriConnect solves these issues via a centralized Django web platform:
 ![WhatsApp Image 2025-11-28 at 12 43 12 (2)](https://github.com/user-attachments/assets/95567d85-d9b4-412e-981c-2b39be2dd37e)
 
 
-![WhatsApp Image 2025-11-28 at 12 43 12 (2)](https://github.com/user-attachments/assets/e51d1456-93c8-4cc5-a92d-941a027f5106)
+
 
 
 

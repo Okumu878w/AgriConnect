@@ -28,13 +28,13 @@ AgriConnect solves these issues via a centralized Django web platform:
 
  Key Features
 
-###  For Farmers (Seller App)
+###  For Farmers 
 * **Inventory CRUD:** Easily add crops, quantity, and set prices per unit.
 * **Sales Analytics:** Django-generated reports on revenue and top-selling products.
 * **Advisory:** notify farmers on the price treands of their products.
 
 
-### For Buyers (Marketplace App)
+### For Buyers 
 * **Advanced Search:** Filter by location (e.g., "Kitale"), category, or price range.
 * **Farmer Profiles:** View farmer ratings and history before buying.
 

@@ -48,5 +48,12 @@ AgriConnect solves these issues via a centralized Django web platform:
 * **Frontend:** Django Templates (DTL) + Bootstrap 5 + C
 
 ![WhatsApp Image 2025-11-28 at 12 43 12](https://github.com/user-attachments/assets/d3954153-6aed-4033-851d-c441c7e03e6c)
+![WhatsApp Image 2025-11-28 at 12 43 12 (1)](https://github.com/user-attachments/assets/de089544-7354-486f-a076-3619bc55ab55)
+![WhatsApp Image 2025-11-28 at 12 43 12 (2)](https://github.com/user-attachments/assets/95567d85-d9b4-412e-981c-2b39be2dd37e)
+
+
+![WhatsApp Image 2025-11-28 at 12 43 12 (2)](https://github.com/user-attachments/assets/e51d1456-93c8-4cc5-a92d-941a027f5106)
+
+
 
 

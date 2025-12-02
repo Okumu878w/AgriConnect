@@ -2,7 +2,7 @@ AgriConnect (Django)
 
 
 
-> **Bridging the gap between farm and buyers**
+> **Bridging the gap between farmers and buyers**
 
 AgriConnect is a dual-interface digital marketplace built with **Django** designed to eliminate supply chain inefficiencies by connecting agricultural producers directly with consumers. By leveraging Django's robust backend and secure authentication, we empower farmers in regions like Riftvalley to list produce directly, while ensuring buyers receive fresh, organic products with full transparency.
 

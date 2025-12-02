@@ -21,24 +21,24 @@ The current agricultural supply chain faces significant challenges:
 
 AgriConnect solves these issues via a centralized Django web platform:
 * **Direct Market Access:** Farmers sell globally or locally without intermediaries.
-* **Smart Dashboard:** A view for farmers to track sales and inventory (visualized with Chart.js).
+* **Smart Dashboard:** A view for farmers to track sales and inventory .
 * **Trust & Transparency:** "Story of the Food" feature displaying origin details.
 
 ---
 
  Key Features
 
-### 👨‍🌾 For Farmers (Seller App)
+###  For Farmers (Seller App)
 * **Inventory CRUD:** Easily add crops, quantity, and set prices per unit.
 * **Sales Analytics:** Django-generated reports on revenue and top-selling products.
 * **Advisory:** notify farmers on the price treands of their products.
 
 
-### 🛒 For Buyers (Marketplace App)
+### For Buyers (Marketplace App)
 * **Advanced Search:** Filter by location (e.g., "Kitale"), category, or price range.
 * **Farmer Profiles:** View farmer ratings and history before buying.
 
----
+**NO ONE IN THE PLATFORM IS LIMITED TO LISTING THEIR PRODUCTS**
 
 ## 🛠 Tech Stack
 

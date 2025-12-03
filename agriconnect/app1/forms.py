@@ -19,4 +19,8 @@ class SignUpForm(UserCreationForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'category', 'location', 'price', 'quantity', 'phone_number', 'image']       
+        fields = ['name', 'category', 'location', 'price', 'quantity', 'phone_number', 'image']  
+
+
+
+

@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login
 from .forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import ProductForm
+from django.db.models import Q
 # Create your views here.
 
 
@@ -51,6 +52,28 @@ def post_product(request):
         form = ProductForm()
     return render(request, 'app1/add.html', {'form': form})
 
+@login_required
+def update(request, pk):
+    product = get_object_or_404(Product, id=pk)
+    if product.seller != request.user:
+        return redirect('home') 
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save() 
+            return redirect('home') 
+    else:
+        form = ProductForm(instance=product) 
+
+    return render(request, 'app1/update.html', {'form': form})
+def delete(request,pk):
+    form=Product.objects.get(id=pk)
+    if request.method=="POST":
+        form.delete()
+        return redirect("home")
+    return render(request,'app1/delete.html')
+
 # 2. MARKETPLACE VIEW (Shows ALL products)
 def marketplace(request):
     products = Product.objects.all() # Fetch everything
@@ -63,3 +86,24 @@ def seller_dashboard(request):
     user_products = Product.objects.filter(seller=request.user)
     return render(request, 'app1/sellerdashboard.html', {'products': user_products})
 
+
+def search_products(request):
+    # Get the query, default to empty string
+    query = request.GET.get('q', '') 
+    
+    # Start with an empty list
+    results = []
+
+    # Only filter if the user actually typed something
+    if query:
+        results = Product.objects.filter(
+            Q(name__icontains=query) | 
+            Q(category__icontains=query) | 
+            Q(location__icontains=query)
+        ).distinct()
+
+    
+    
+    
+
+    return render(request, 'app1/search_results.html', {'products': results, 'query': query})

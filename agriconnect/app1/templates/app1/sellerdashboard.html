@@ -28,8 +28,8 @@
                     <td class="price">{{product.price}}</td>
                     
                     <td class="actions">
-                        <a href="#" class="edit-btn">Edit</a>
-                        <a href="#" class="delete-btn">Delete</a>
+                        <a href="{%url 'update' product.id%}" class="edit-btn">Edit</a>
+                        <a href="{%url 'delete' product.id%}" class="delete-btn">Delete</a>
                     </td>
                 </tr>
                 {%endfor%}

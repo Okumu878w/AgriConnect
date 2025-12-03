@@ -37,13 +37,13 @@
 
     <div  class="bar" >
 
-    <div class="search" >
+    <form class="search" action="{% url 'search_results' %}" method="get" >
         
         <button style="background: none; border: none; cursor: pointer; font-size: 18px;">
             &#128269;
         </button>
-        <input type="text" placeholder="Search products..." style="border: none; outline: none; flex: 1; font-size: 16px;">
-    </div>
+        <input type="text" name="q" placeholder="Search products by name,location,category..." style="border: none; outline: none; flex: 1; font-size: 16px;">
+    </form>
 
     <div style="position: relative; cursor: pointer;" >
         

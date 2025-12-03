@@ -323,161 +323,228 @@ h3{
         pointer-events: none; /* Prevents graphic from blocking clicks */
     }
 
-    /* for product display*/
+    /* for product display line 327 to 473*/
+
+    
+ 
+
+
 .pdisplay{
     display: flex;
     margin-left: 25px;
-}    
-.product-card {
-        width: 260px;
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden; /* Keeps image corners rounded */
-        border: 1px solid #eef0f2;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        transition: transform 0.2s ease;
-    }
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    display: grid;
+    /* This creates columns that are at least 260px wide, 
+       but stretch to fill available space */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    
+    /* Spacing between the cards */
+    gap: 10px;
+    
+    /* Optional: Limit the total width and center the whole grid on page */
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-    .product-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
+/* Card Container */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 16px; /* High rounding for the modern look */
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-family: 'Merriweather', serif; /* Global serif for this card style */
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* 2. Image Container */
-    .image-container {
-        position: relative;
-        height: 160px;
-        width: 100%;
-        background-color: #f0f0f0;
-        
-    }
+/* Image Area */
+.card-image-container {
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
 
-    /* The Product Image */
-    .product-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures image fills box without stretching */
-        display: block;
-        border-radius: 15px;
-    }
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-    /* Badges (Overlaid on Image) */
-    .badge {
-        position: absolute;
-        top: 10px;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 11px;
-        font-weight: 700;
-        z-index: 2;
-    }
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
 
-    .category-badge {
-        left: 10px;
-        background-color: #fff;
-        color: #333;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+.badge-grains {
+    left: 15px;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Merriweather', serif;
+}
 
-    .verified-badge {
-        right: 10px;
-        background-color: #2ecc71; /* Green */
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
+.badge-verified {
+    right: 15px;
+    background-color: #22c55e; /* Vibrant Green */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Roboto', sans-serif; /* Verification usually sans-serif */
+}
 
-    /* 3. Details Section */
-    .card-details {
-        padding: 16px;
-    }
+/* Icons Helper */
+.icon-white { stroke: white; }
+.icon-grey { stroke: #8898aa; }
+.icon-save { stroke: #8898aa; }
 
-    .details-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 12px;
-    }
+/* Content Area */
+.card-details {
+    padding: 12px 16px 16px 16px;
+}
 
-    /* Product Title & Location */
-    .product-info-left {
-        flex: 1;
-        padding-right: 8px;
-    }
+/* Header Row (Title & Save) */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
-    .product-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #2c3e50;
-        margin: 0 0 6px 0;
-        line-height: 1.3;
-    }
+.title {
+    font-size: 19px;
+    color: #0b213e; /* Deep Navy */
+    font-weight: 900;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
 
-    .location {
-        font-size: 13px;
-        color: #7f8c8d;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8898aa;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-style: italic; /* Slight italic common in serif locations */
+}
 
-    /* Save Button */
-    .save-action {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        color: #888;
-        transition: color 0.2s;
-        min-width: 35px;
-    }
+/* Save Button Styling */
+.save-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 15px;
+    padding-top: 5px; /* Aligns visually with title */
+}
 
-    .save-action:hover {
-        color: #1a7f37;
-    }
+.save-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    color: #8898aa;
+    font-weight: 500;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
 
-    .save-text {
-        font-size: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-top: 2px;
-    }
+/* Divider Line */
+.divider {
+    border: 0;
+    border-top: 1px solid #eef0f2;
+    margin: 15px 0;
+}
 
-    /* 4. Footer: Price & Stock */
-    .card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        border-top: 1px solid #f5f5f5;
-        padding-top: 12px;
-    }
+/* Stats Row (Price & Stock) */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-    .label {
-        display: block;
-        font-size: 11px;
-        color: #95a5a6;
-        margin-bottom: 2px;
-        text-transform: uppercase;
-    }
+.stat-group {
+    display: flex;
+    flex-direction: column;
+}
 
-    .value {
-        display: block;
-        font-weight: 700;
-        font-size: 16px;
-        color: #333;
-    }
+.stat-label {
+    font-family: 'Merriweather', serif;
+    font-size: 11px;
+    color: #9aa5b1;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
 
-    .price-info .value {
-        color: #1a7f37; /* AgriConnect Green */
-    }   
+.stat-value {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.value-green {
+    color: #008f53; /* The specific dark green from the image */
+}
+
+.value-navy {
+    color: #0b213e; /* The specific dark navy */
+}
+.action-row {
+    margin-top: 0px; /* Adds space between Price/Stock and button */
+    padding-top:0px;
+    border-top: 1px dashed #eef0f2; /* Optional: adds a subtle separation line */
+}
+
+.btn-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Space between icon and text */
+    width: 100%;
+    padding: 6px 0;
+    
+    /* Styling */
+    background-color: #f0fdf4; /* Very light green background */
+    color: #008f53; /* Matching your Price Green */
+    border: 1px solid #008f53;
+    border-radius: 5px;
+    
+    /* Font settings */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.btn-call:hover {
+    background-color: #008f53;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 143, 83, 0.2);
+}
+
     
     
     
 
 
 
-
+/* procduct styles ends here*/
 /* Container Card */
 .inventory-container {
     background-color: #ffffff;

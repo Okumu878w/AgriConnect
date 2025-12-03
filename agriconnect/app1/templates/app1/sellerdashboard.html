@@ -6,7 +6,7 @@
     <div class="inventory-container">
         <div class="inventory-header">
             <h2>My Inventory</h2>
-            <button><a href="#" class="view-all-link">Add item</a></button>
+            <button><a href="{%url 'add'%}" class="view-all-link">Add item</a></button>
         </div>
 
         <table class="inventory-table">
@@ -21,16 +21,18 @@
             </thead>
             <tbody>
                 <!-- for loop here -->
+                 {%for product in products%}
                 <tr>
-                    <td class="product-name">Yellow Maize</td>
-                    <td><span class="category-badge">Grains</span></td>
-                    <td class="price">KSh 4,500</td>
+                    <td class="product-name">{{product.name}}</td>
+                    <td><span class="category-badge">{{product.category}}</span></td>
+                    <td class="price">{{product.price}}</td>
                     
                     <td class="actions">
                         <a href="#" class="edit-btn">Edit</a>
                         <a href="#" class="delete-btn">Delete</a>
                     </td>
                 </tr>
+                {%endfor%}
 
                 
 

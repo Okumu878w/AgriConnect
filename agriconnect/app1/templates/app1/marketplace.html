@@ -93,118 +93,78 @@
     </div>
 </div>
     </div>
-    <div class="pdisplay">
-    <div class="card-details">
-    
-    <div class="details-header">
+<div class="pdisplay">
+   <!-- for loop here -->
+    {%for product in products%}
+    <div class="card">
         
-       <div class="image-container">
-            <span class="badge category-badge">Grains</span>
-            <span class="badge verified-badge">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Verified
-            </span>
+        <div class="card-image-container">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
             
-            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                 alt="Yellow Maize" 
-                 class="product-img">
+            <div class="badge badge-grains">{{product.category}}</div>
+            
+            <div class=" badge-verified">
+                
+                <span></span>
+            </div>
         </div>
 
         <div class="card-details">
-            <div class="details-row">
-                <div class="product-info-left">
-                    <h3 class="product-title">Yellow Maize (Dry)</h3>
-                    <div class="location">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Nakuru, KE
-                    </div>
-                </div>
-
-                <div class="save-action">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                    <span class="save-text">Save</span>
-                </div>
-            </div>
-
-            <div class="card-footer">
-                <div class="price-info">
-                    <span class="label">Price</span>
-                    <span class="value">KSh 4,500</span>
-                </div>
-                <div class="stock-info">
-                    <span class="label">Stock</span>
-                    <span class="value">50 bags</span>
-                </div>
-            </div>
-        
-        </div>
-        
-        
-    
-    
-        
-        </div>
-    </div>
-    <div class="test">
-<div class="card-details">
-    
-    <div class="details-header">
-        
-       <div class="image-container">
-            <span class="badge category-badge">Grains</span>
-            <span class="badge verified-badge">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Verified
-            </span>
             
-            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                 alt="Yellow Maize" 
-                 class="product-img">
-        </div>
-
-        <div class="card-details">
-            <div class="details-row">
-                <div class="product-info-left">
-                    <h3 class="product-title">Yellow Maize (Dry)</h3>
+            <div class="header-row">
+                <div class="product-info">
+                    <h2 class="title">{{product.name}}</h2>
                     <div class="location">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        Nakuru, KE
+                        <svg class="icon-grey" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>{{product.location}}</span>
                     </div>
+                    
                 </div>
-
-                <div class="save-action">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                
+                <div class="save-btn">
+                    <svg class="icon-save" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                     </svg>
-                    <span class="save-text">Save</span>
+                    <span class="save-text">SAVE</span>
                 </div>
             </div>
 
-            <div class="card-footer">
-                <div class="price-info">
-                    <span class="label">Price</span>
-                    <span class="value">KSh 4,500</span>
+            <hr class="divider">
+
+            <div class="stats-row">
+                <div class="stat-group">
+                    <span class="stat-label">PRICE</span>
+                    <span class="stat-value value-green">{{product.price}}</span>
                 </div>
-                <div class="stock-info">
-                    <span class="label">Stock</span>
-                    <span class="value">50 bags</span>
+                <div class="stat-group">
+                    <span class="stat-label">STOCK</span>
+                    <span class="stat-value value-navy">{{product.quantity}}</span>
                 </div>
             </div>
-        
+            <div class="action-row">
+     <p  class="btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>Call: {{product.phone_number}}</span>
+     </p>
+     </div>
+
         </div>
         
-        
+    </div>
+    {%endfor%}
     
     
-        
-        </div>
-    </div>
-    </div>
+
 </div>
-    </div>
-    </div>
+
+<!-- the above division is for a product card -->
+</div>
+</div>
 </div>
 
 

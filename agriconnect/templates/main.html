@@ -1,0 +1,78 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriconnect</title>
+    <link rel="stylesheet" href="{%static 'css/main.css'%}">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="head">
+            <img src="{%static 'images/pexels-pixabay-64221.jpg'%}" alt="" class="logo"><h3>Agriconnect</h3>
+        </div>
+        <hr>
+        <div class="sidebarcontent">
+        <a href="{%url 'home'%}" >&#127978; Marketplace</a><br>
+        <a href="{%url 'seller'%}">&#128202; Seller Dashboard</a><br>
+        <a href="{%url 'advise'%}">&#128421; Advisory</a>
+        
+        </div  >
+          
+            <div class="sidebar-footer">
+                <form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button class="logout-btn" ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+        <polyline points="16 17 21 12 16 7"></polyline>
+        <line x1="21" y1="12" x2="9" y2="12"></line>
+    </svg>
+    <span style="margin-left: 8px;">Log Out</span></button>
+</form>
+            </div>
+        
+    </div>
+
+    <div  class="bar" >
+
+    <div class="search" >
+        
+        <button style="background: none; border: none; cursor: pointer; font-size: 18px;">
+            &#128269;
+        </button>
+        <input type="text" placeholder="Search products..." style="border: none; outline: none; flex: 1; font-size: 16px;">
+    </div>
+
+    <div style="position: relative; cursor: pointer;" >
+        
+        <img src="{%static 'images/bookmark.png'%}" alt="" class="book">
+        
+        <span class="bookmark" >
+            2
+        </span>
+    </div>
+
+    <div class="profile">
+        
+        
+        <div class="userpicdiv">
+            <span style="font-size: 24px;">&#128100;</span>                        <!--place holder for an image-->
+        </div>
+        
+        <span class="name" style="color: white; font-size: 12px; margin-top: 5px; font-weight: bold;">
+            Hello, {{user.username}}<!--place holder for farmers name(account owner/seller/buyer)-->
+        </span>
+      
+        
+    </div>
+    
+
+</div>
+{%block content%}
+
+{%endblock%}
+    
+</body>
+</html>

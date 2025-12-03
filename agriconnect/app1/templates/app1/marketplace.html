@@ -1,0 +1,212 @@
+{% extends "main.html" %}
+{% block content %}
+{%load static%}
+<link rel="stylesheet" href="{%static 'css/main.css'%}">
+
+
+<div class="mcontent">
+    <div>
+        <div class="filter-card">
+        <div class="filter-header">
+            <h3>Filters</h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+        </div>
+
+        <div class="filter-section">
+            <h4 class="section-title">CATEGORIES</h4>
+            
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                All
+            </label>
+            
+            <label class="checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Grains
+            </label>
+            
+            <label class="checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Vegetables
+            </label>
+            <label class="checkbox-container">
+            
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Tubers
+            </label>
+            <label class="checkbox-container">
+            
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Cereals
+            </label>
+        </div>
+
+        <div class="filter-section">
+            <h4 class="section-title">LOCATION</h4>
+            <div class="select-wrapper">
+                <select>
+                    <option value="Arusha"></option>
+                    <option value="Arusha">Naivasha</option>
+                    <option value="Nairobi">Nairobi</option>
+                    <option value="Kampala">Nakuru</option>
+                    <option value="Kampala">kitale</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h4 class="section-title">PRICE RANGE (KSH)</h4>
+            <div class="price-inputs">
+                <input type="number" value="0" class="input-box">
+                <span class="separator">-</span>
+                <input type="number" value="1" class="input-box">
+            </div>
+        </div>
+
+        <button class="apply-btn">Apply Filters</button>
+    </div>
+    </div>
+    <div>
+    <div>
+        <div class="promo-banner">
+    <div class="banner-content">
+        <h2>Market Day: Best Prices in Rift Valley</h2>
+        <p>Connect directly with top-rated farmers. Bulk discounts available for orders over 50 bags.</p>
+        <button class="btn-offers">View Offers</button>
+    </div>
+    
+    <div class="banner-graphic">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 50 L40 80 L70 50 L100 80 L130 50 L160 80 L190 50" 
+                  stroke="rgba(255,255,255,0.2)" 
+                  stroke-width="12" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+        </svg>
+    </div>
+</div>
+    </div>
+    <div class="pdisplay">
+    <div class="card-details">
+    
+    <div class="details-header">
+        
+       <div class="image-container">
+            <span class="badge category-badge">Grains</span>
+            <span class="badge verified-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Verified
+            </span>
+            
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                 alt="Yellow Maize" 
+                 class="product-img">
+        </div>
+
+        <div class="card-details">
+            <div class="details-row">
+                <div class="product-info-left">
+                    <h3 class="product-title">Yellow Maize (Dry)</h3>
+                    <div class="location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Nakuru, KE
+                    </div>
+                </div>
+
+                <div class="save-action">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span class="save-text">Save</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="price-info">
+                    <span class="label">Price</span>
+                    <span class="value">KSh 4,500</span>
+                </div>
+                <div class="stock-info">
+                    <span class="label">Stock</span>
+                    <span class="value">50 bags</span>
+                </div>
+            </div>
+        
+        </div>
+        
+        
+    
+    
+        
+        </div>
+    </div>
+    <div class="test">
+<div class="card-details">
+    
+    <div class="details-header">
+        
+       <div class="image-container">
+            <span class="badge category-badge">Grains</span>
+            <span class="badge verified-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Verified
+            </span>
+            
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                 alt="Yellow Maize" 
+                 class="product-img">
+        </div>
+
+        <div class="card-details">
+            <div class="details-row">
+                <div class="product-info-left">
+                    <h3 class="product-title">Yellow Maize (Dry)</h3>
+                    <div class="location">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Nakuru, KE
+                    </div>
+                </div>
+
+                <div class="save-action">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span class="save-text">Save</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="price-info">
+                    <span class="label">Price</span>
+                    <span class="value">KSh 4,500</span>
+                </div>
+                <div class="stock-info">
+                    <span class="label">Stock</span>
+                    <span class="value">50 bags</span>
+                </div>
+            </div>
+        
+        </div>
+        
+        
+    
+    
+        
+        </div>
+    </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+
+
+{% endblock  %}

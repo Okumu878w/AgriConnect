@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% block content %}
+{%load static%}
+<link rel="stylesheet" href="{%static 'css/main.css'%}">
+
+
+<div class="advisory-container">
+        <h2 class="section-title">Farming Advisory Center</h2>
+
+        <div class="advisory-grid">
+            <div class="card market-card">
+                <div class="card-header">
+                    <span class="icon-market">📈</span> 
+                    <h3>Market Insights (Nairobi)</h3>
+                </div>
+
+                <div class="insight-item positive">
+                    <div class="insight-header">
+                        <span class="trend-icon">⬆</span>
+                        <h4>Maize Price UP by 15%</h4>
+                    </div>
+                    <p class="insight-text">
+                        High demand due to shortage. Recommend selling price: KSh 4,500 - 4,800.
+                    </p>
+                </div>
+
+                <div class="insight-item negative">
+                    <div class="insight-header">
+                        <span class="trend-icon">⬇</span>
+                        <h4>Tomato Oversupply Alert</h4>
+                    </div>
+                    <p class="insight-text">
+                        Prices dropping in Central region. Consider value addition or fast sale.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-header">
+                <span class="icon-plant">🌱</span>
+                <h3>Climate-Smart Farming Tip</h3>
+            </div>
+            <p class="tip-content">
+                <strong>Water Harvesting:</strong> With erratic rainfall, ensure you have simple trenches (Fanya Juu/Juu Chini) on sloping land to capture and conserve rainwater. This mitigates drought risk and prevents soil erosion during flash floods. Check your local extension office for specific land contouring advice.
+            </p>
+        </div>
+
+    </div>
+
+
+
+{% endblock  %}

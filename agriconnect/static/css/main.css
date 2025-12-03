@@ -1,0 +1,848 @@
+.sidebar{
+height: 100%;
+width: 250px;
+position: fixed;
+left: 0;
+top: 0;
+background-color: #1a4d2e; 
+color: white;
+font-family: 'Poppins', sans-serif;
+
+}
+.sidebarcontent{
+    
+    margin-left: 40px;
+
+}
+.sidebarcontent a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+}
+.sidebarcontent a:hover {
+    
+    padding-left: 5px;   
+    color: rgba(3, 223, 22,0.5);       
+}
+.logo{
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+h3{
+    
+    margin-left: 10px;
+}
+.head{
+    display: flex;
+}
+.bar{
+    margin-left: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px; 
+    padding: 10px 20px; 
+    background-color: rgb(202, 196, 196); 
+    font-family: sans-serif;
+   
+}
+.search{
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    width: 700px;
+}
+.profile{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    cursor: pointer;
+}
+.bookmark{
+    position: absolute; 
+    top: -5px; 
+    right: -8px; 
+    background-color: #ff4444; 
+    color: white; 
+    font-size: 12px; 
+    font-weight: bold; 
+    padding: 2px 6px; 
+    border-radius: 50%;
+}
+.username{
+    margin-top: 3px;
+}
+.userpicdiv{
+    width: 50px; 
+    height: 50px; 
+    background-color: white; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 2px solid rgba(255,255,255,0.2);
+    
+}
+.userpicdiv a{
+    text-decoration: none;
+}
+.name a{
+    text-decoration: none;
+    color: white;
+}
+.book{
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+}
+.mcontent{
+    display: flex;
+    margin-left: 250px;
+    
+}
+
+    
+  
+
+.filter-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 300px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eef0f2;
+        height: 500px;
+        
+}
+
+    
+.filter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+}
+
+.filter-header h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+}
+
+    
+.filter-section {
+        margin-bottom: 15px;
+}
+.section-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: black; /* Light gray text for labels */
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+}
+
+    
+.checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 15px;
+        color: black;
+        cursor: pointer;
+        user-select: none;
+    }
+
+.checkbox-container input {
+        display: none; /* Hide default checkbox */
+    }
+
+    .checkmark {
+        height: 18px;
+        width: 18px;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        margin-right: 10px;
+        position: relative;
+        transition: all 0.2s;
+    }
+
+    
+.checkbox-container input:checked ~ .checkmark {
+        background-color: #1a7f37; /*  Green */
+        border-color: #1a7f37;
+    }
+
+    
+.checkbox-container input:checked ~ .checkmark:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        width: 4px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    
+.select-wrapper select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #333;
+        background-color: #fff;
+        cursor: pointer;
+        outline: none;
+    }
+
+.select-wrapper select:focus {
+        border-color: #1a7f37;
+    }
+
+    
+.price-inputs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+.input-box {
+        width: 45%;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #333;
+        outline: none;
+    }
+
+.input-box:focus {
+        border-color: #1a7f37;
+    }
+
+.separator {
+        color: #999;
+        font-weight: bold;
+    }
+
+    /* Apply Button */
+.apply-btn {
+        width: 100%;
+        background-color: #1a7f37; /*  Green */
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+.apply-btn:hover {
+        background-color: #146c2e; /* Slightly darker green on hover */
+    }
+
+    
+
+
+.promo-banner {
+        background-color: #1a7f37; /* AgriConnect Green */
+        color: white;
+        padding: 40px;
+        border-radius: 12px;
+        position: relative; /* Needed for positioning the graphic */
+        overflow: hidden;   /* Clips the graphic if it goes outside */
+        box-shadow: 0 4px 15px rgba(26, 127, 55, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 200px;
+        margin-left: 25px;
+        margin-top: 8px;
+    }
+
+    /* Content Styling */
+.banner-content {
+        max-width: 65%;
+        z-index: 2; /* Ensures text is above the graphic */
+    }
+
+    .banner-content h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 12px 0;
+        line-height: 1.2;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+        margin: 0 0 24px 0;
+        opacity: 0.9;
+        line-height: 1.5;
+    }
+
+    /* Button Styling */
+    .btn-offers {
+        background-color: #ffcc00; /* Yellow/Gold */
+        color: #1a1a1a;
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-offers:hover {
+        background-color: #e6b800;
+        transform: translateY(-2px);
+    }
+
+    /* Decorative Graphic Styling */
+    .banner-graphic {
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        transform: rotate(-10deg);
+        z-index: 1;
+        pointer-events: none; /* Prevents graphic from blocking clicks */
+    }
+
+    /* for product display line 327 to 473*/
+
+    
+ 
+
+
+.pdisplay{
+    display: flex;
+    margin-left: 25px;
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    display: grid;
+    /* This creates columns that are at least 260px wide, 
+       but stretch to fill available space */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    
+    /* Spacing between the cards */
+    gap: 10px;
+    
+    /* Optional: Limit the total width and center the whole grid on page */
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card Container */
+.card {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 16px; /* High rounding for the modern look */
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-family: 'Merriweather', serif; /* Global serif for this card style */
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Area */
+.card-image-container {
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.badge-grains {
+    left: 15px;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Merriweather', serif;
+}
+
+.badge-verified {
+    right: 15px;
+    background-color: #22c55e; /* Vibrant Green */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Roboto', sans-serif; /* Verification usually sans-serif */
+}
+
+/* Icons Helper */
+.icon-white { stroke: white; }
+.icon-grey { stroke: #8898aa; }
+.icon-save { stroke: #8898aa; }
+
+/* Content Area */
+.card-details {
+    padding: 12px 16px 16px 16px;
+}
+
+/* Header Row (Title & Save) */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 19px;
+    color: #0b213e; /* Deep Navy */
+    font-weight: 900;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8898aa;
+    font-size: 14px;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-style: italic; /* Slight italic common in serif locations */
+}
+
+/* Save Button Styling */
+.save-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 15px;
+    padding-top: 5px; /* Aligns visually with title */
+}
+
+.save-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    color: #8898aa;
+    font-weight: 500;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* Divider Line */
+.divider {
+    border: 0;
+    border-top: 1px solid #eef0f2;
+    margin: 15px 0;
+}
+
+/* Stats Row (Price & Stock) */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stat-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-family: 'Merriweather', serif;
+    font-size: 11px;
+    color: #9aa5b1;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.value-green {
+    color: #008f53; /* The specific dark green from the image */
+}
+
+.value-navy {
+    color: #0b213e; /* The specific dark navy */
+}
+.action-row {
+    margin-top: 0px; /* Adds space between Price/Stock and button */
+    padding-top:0px;
+    border-top: 1px dashed #eef0f2; /* Optional: adds a subtle separation line */
+}
+
+.btn-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Space between icon and text */
+    width: 100%;
+    padding: 6px 0;
+    
+    /* Styling */
+    background-color: #f0fdf4; /* Very light green background */
+    color: #008f53; /* Matching your Price Green */
+    border: 1px solid #008f53;
+    border-radius: 5px;
+    
+    /* Font settings */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.btn-call:hover {
+    background-color: #008f53;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 143, 83, 0.2);
+}
+
+    
+    
+    
+
+
+
+/* procduct styles ends here*/
+/* Container Card */
+.inventory-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    width: 100%;
+    max-width: 900px;
+    margin-left: 250px;
+}
+
+/* Header Section */
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.inventory-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: #28a745; /* Green to match dashboard theme */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th {
+    text-align: left;
+    font-size: 13px;
+    color: #6c757d; /* Grey text for headers */
+    font-weight: 600;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.inventory-table td {
+    padding: 16px 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Remove border from last row */
+.inventory-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Specific Column Styling */
+.product-name {
+    font-weight: 500;
+    color: #212529;
+}
+
+.price {
+    color: #495057;
+}
+
+/* Category Badge */
+.category-badge {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #495057;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-badge.in-stock {
+    background-color: #e6f9ed;
+    color: #28a745;
+}
+
+.status-badge.low-stock {
+    background-color: #fff3cd;
+    color: #d97706; /* Darker orange text */
+}
+
+.status-badge.out-of-stock {
+    background-color: #ffeaea;
+    color: #dc3545;
+}
+
+/* Action Links */
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-btn {
+    text-decoration: none;
+    color: #3b82f6; /* Blue */
+    font-size: 13px;
+}
+
+.delete-btn {
+    text-decoration: none;
+    color: #ef4444; /* Red */
+    font-size: 13px;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    text-decoration: underline;
+}   
+
+
+
+
+
+
+
+
+
+/* Main Container */
+.advisory-container {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 250px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+/* Grid Layout for the top section */
+.advisory-grid {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* Card Styling */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    flex: 1; /* Takes up available space */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #92400e; /* Brownish color for Market header */
+}
+
+.icon-market {
+    color: #92400e;
+}
+
+/* Market Insight Items */
+.insight-item {
+    border-left: 4px solid;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.insight-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Positive Alert (Green) */
+.insight-item.positive {
+    background-color: #ecfdf5; /* Very light green */
+    border-left-color: #10b981; /* Strong green border */
+}
+
+.insight-item.positive h4 {
+    color: #065f46;
+}
+
+/* Negative Alert (Red) */
+.insight-item.negative {
+    background-color: #fef2f2; /* Very light red */
+    border-left-color: #ef4444; /* Strong red border */
+}
+
+.insight-item.negative h4 {
+    color: #991b1b;
+}
+
+/* Insight Content Styling */
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.insight-header h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.trend-icon {
+    font-size: 12px;
+}
+
+.insight-text {
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* Climate Tip Section */
+.tip-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tip-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.icon-plant {
+    color: #16a34a; /* Green icon */
+    font-size: 20px;
+}
+
+.tip-content {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.tip-content strong {
+    color: #374151;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Optional divider line */
+    padding-top: 10px;
+    margin-top: 350px;
+    margin-left: 40px;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #ffcccc; /* Light red/pink to indicate "exit" */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    transition: all 0.3s;
+}

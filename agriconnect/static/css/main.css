@@ -9,6 +9,33 @@ color: white;
 font-family: 'Poppins', sans-serif;
 
 }
+.product-list{
+    margin-left: 250px;
+    display: flex;
+    
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    display: grid;
+    /* This creates columns that are at least 260px wide, 
+       but stretch to fill available space */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    
+    /* Spacing between the cards */
+    gap: 20px;
+    
+    /* Optional: Limit the total width and center the whole grid on page */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 12px;
+
+}
+.kich{
+    margin-left: 250px;
+}
 .sidebarcontent{
     
     margin-left: 40px;
@@ -108,220 +135,6 @@ h3{
     
 }
 
-    
-  
-
-.filter-card {
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 300px;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        border: 1px solid #eef0f2;
-        height: 500px;
-        
-}
-
-    
-.filter-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 24px;
-}
-
-.filter-header h3 {
-        font-size: 18px;
-        font-weight: 700;
-        color: #333;
-}
-
-    
-.filter-section {
-        margin-bottom: 15px;
-}
-.section-title {
-        font-size: 12px;
-        font-weight: 700;
-        color: black; /* Light gray text for labels */
-        margin-bottom: 12px;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-}
-
-    
-.checkbox-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        font-size: 15px;
-        color: black;
-        cursor: pointer;
-        user-select: none;
-    }
-
-.checkbox-container input {
-        display: none; /* Hide default checkbox */
-    }
-
-    .checkmark {
-        height: 18px;
-        width: 18px;
-        background-color: #fff;
-        border: 2px solid #ddd;
-        border-radius: 4px;
-        margin-right: 10px;
-        position: relative;
-        transition: all 0.2s;
-    }
-
-    
-.checkbox-container input:checked ~ .checkmark {
-        background-color: #1a7f37; /*  Green */
-        border-color: #1a7f37;
-    }
-
-    
-.checkbox-container input:checked ~ .checkmark:after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 1px;
-        width: 4px;
-        height: 9px;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-    }
-
-    
-.select-wrapper select {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 14px;
-        color: #333;
-        background-color: #fff;
-        cursor: pointer;
-        outline: none;
-    }
-
-.select-wrapper select:focus {
-        border-color: #1a7f37;
-    }
-
-    
-.price-inputs {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-.input-box {
-        width: 45%;
-        padding: 8px;
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 14px;
-        color: #333;
-        outline: none;
-    }
-
-.input-box:focus {
-        border-color: #1a7f37;
-    }
-
-.separator {
-        color: #999;
-        font-weight: bold;
-    }
-
-    /* Apply Button */
-.apply-btn {
-        width: 100%;
-        background-color: #1a7f37; /*  Green */
-        color: white;
-        border: none;
-        padding: 8px;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-
-.apply-btn:hover {
-        background-color: #146c2e; /* Slightly darker green on hover */
-    }
-
-    
-
-
-.promo-banner {
-        background-color: #1a7f37; /* AgriConnect Green */
-        color: white;
-        padding: 40px;
-        border-radius: 12px;
-        position: relative; /* Needed for positioning the graphic */
-        overflow: hidden;   /* Clips the graphic if it goes outside */
-        box-shadow: 0 4px 15px rgba(26, 127, 55, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 200px;
-        margin-left: 25px;
-        margin-top: 8px;
-    }
-
-    /* Content Styling */
-.banner-content {
-        max-width: 65%;
-        z-index: 2; /* Ensures text is above the graphic */
-    }
-
-    .banner-content h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 0 0 12px 0;
-        line-height: 1.2;
-    }
-
-    .banner-content p {
-        font-size: 16px;
-        margin: 0 0 24px 0;
-        opacity: 0.9;
-        line-height: 1.5;
-    }
-
-    /* Button Styling */
-    .btn-offers {
-        background-color: #ffcc00; /* Yellow/Gold */
-        color: #1a1a1a;
-        font-size: 15px;
-        font-weight: 700;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: transform 0.2s, background-color 0.2s;
-    }
-
-    .btn-offers:hover {
-        background-color: #e6b800;
-        transform: translateY(-2px);
-    }
-
-    /* Decorative Graphic Styling */
-    .banner-graphic {
-        position: absolute;
-        right: -20px;
-        bottom: -20px;
-        transform: rotate(-10deg);
-        z-index: 1;
-        pointer-events: none; /* Prevents graphic from blocking clicks */
-    }
 
     /* for product display line 327 to 473*/
 
@@ -344,12 +157,12 @@ h3{
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     
     /* Spacing between the cards */
-    gap: 10px;
+    gap: 60px;
     
     /* Optional: Limit the total width and center the whole grid on page */
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 12px;
 }
 
 /* Card Container */
@@ -398,15 +211,6 @@ h3{
     font-family: 'Merriweather', serif;
 }
 
-.badge-verified {
-    right: 15px;
-    background-color: #22c55e; /* Vibrant Green */
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Roboto', sans-serif; /* Verification usually sans-serif */
-}
 
 /* Icons Helper */
 .icon-white { stroke: white; }

@@ -44,15 +44,36 @@
         </button>
         <input type="text" name="q" placeholder="Search products by name,location,category..." style="border: none; outline: none; flex: 1; font-size: 16px;">
     </form>
-
-    <div style="position: relative; cursor: pointer;" >
-        
-        <img src="{%static 'images/bookmark.png'%}" alt="" class="book">
-        
-        <span class="bookmark" >
-            2
+<!-- bookmark -->
+   <div class="bookmark-container" style="position: relative; display: inline-block;">
+    <div class="bookmark-icon" id="bookmark-btn" style="cursor: pointer;">
+        <span style="font-size: 24px;">🏷️</span> 
+        <span id="bookmark-badge" class="badge" style="background:red; color:white; border-radius:50%; padding: 2px 6px; font-size: 12px; position: absolute; top: -5px; right: -5px;">
+            {{ saved_items|length }}
         </span>
     </div>
+
+    <div id="bookmark-dropdown" style="display: none; position: absolute; right: 0; background: white; border: 1px solid #ccc; width: 300px; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h4 style="padding: 10px; margin: 0; background: #f4f4f4;">Saved Products</h4>
+        <ul id="saved-list" style="list-style: none; padding: 0; margin: 0;">
+            {% for item in saved_items %}
+                <li id="saved-item-{{ item.product.id }}" style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
+                    <img src="{{ item.product.image.url }}" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover;">
+                    <div>
+                        <strong>{{ item.product.name }}</strong><br>
+                        <small>{{ item.product.price }}</small><br>
+                        <small>{{item.product.phone_number }}</small><br>
+                        <small>{{item.product.location }}</small>
+                        <button onclick="toggleSave({{item.product.id}})" style="background: none; border: none; color: #dc3545; cursor: pointer; font-size: 18px; padding: 0 5px;" title="Remove">
+            &times; </button>
+                    </div>
+                </li>
+            {% empty %}
+                <li id="empty-msg" style="padding: 10px;">No saved items yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
     <div class="profile">
         
@@ -73,6 +94,78 @@
 {%block content%}
 
 {%endblock%}
-    
+    <script>
+    // 1. Toggle Dropdown visibility
+    document.getElementById('bookmark-btn').addEventListener('click', function() {
+        const dropdown = document.getElementById('bookmark-dropdown');
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // 2. Function to call when "Save" ribbon OR "Delete" button is clicked
+    function toggleSave(productId) {
+        fetch("{% url 'toggle_save' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({'product_id': productId})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'ok') {
+                // Update Badge Count
+                document.getElementById('bookmark-badge').innerText = data.count;
+
+                const list = document.getElementById('saved-list');
+                const emptyMsg = document.getElementById('empty-msg');
+                
+                // --- SCENARIO 1: ITEM ADDED ---
+                if (data.action === 'added') {
+                    // Remove "No saved items" message if it exists
+                    if(emptyMsg) emptyMsg.remove();
+
+                    // Create new list item HTML
+                    const li = document.createElement('li');
+                    li.id = `saved-item-${productId}`;
+                    // Added 'justify-content: space-between' to push button to the right
+                    li.style.cssText = "padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;";
+                    
+                    // Inject HTML: Image/Text on left, Delete Button on right
+                    li.innerHTML = `
+                        <div style="display: flex; align-items: center;">
+                            <img src="${data.product_image}" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; border-radius: 4px;">
+                            <div>
+                                <strong style="font-size: 14px; display: block;">${data.product_name}</strong>
+                                <small style="color: #666;">Ksh ${data.product_price}</small><br>
+                                <small style="color: #666;">Phone: ${data.product_phone}</small><br>
+                                <small style="color: #666;">location: ${data.product_location}</small>
+                            </div>
+                        </div>
+                        <button onclick="toggleSave(${productId})" style="background: none; border: none; color: #dc3545; cursor: pointer; font-size: 18px; padding: 0 5px;" title="Remove">
+                            &times;
+                        </button>
+                    `;
+                    list.appendChild(li);
+
+                // --- SCENARIO 2: ITEM REMOVED ---
+                } else if (data.action === 'removed') {
+                    // Remove item from list
+                    const item = document.getElementById(`saved-item-${productId}`);
+                    if (item) item.remove();
+
+                    // If list is now empty, add the "No saved items" message back
+                    if (data.count === 0) {
+                        const emptyLi = document.createElement('li');
+                        emptyLi.id = "empty-msg";
+                        emptyLi.style.cssText = "padding: 10px; text-align: center; color: #888;";
+                        emptyLi.innerText = "No saved items yet.";
+                        list.appendChild(emptyLi);
+                    }
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>

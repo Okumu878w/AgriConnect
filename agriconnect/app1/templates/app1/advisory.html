@@ -5,48 +5,141 @@
 
 
 <div class="advisory-container">
-        <h2 class="section-title">Farming Advisory Center</h2>
+    
+    
 
-        <div class="advisory-grid">
-            <div class="card market-card">
-                <div class="card-header">
-                    <span class="icon-market">📈</span> 
-                    <h3>Market Insights (Nairobi)</h3>
-                </div>
-
-                <div class="insight-item positive">
-                    <div class="insight-header">
-                        <span class="trend-icon">⬆</span>
-                        <h4>Maize Price UP by 15%</h4>
-                    </div>
-                    <p class="insight-text">
-                        High demand due to shortage. Recommend selling price: KSh 4,500 - 4,800.
-                    </p>
-                </div>
-
-                <div class="insight-item negative">
-                    <div class="insight-header">
-                        <span class="trend-icon">⬇</span>
-                        <h4>Tomato Oversupply Alert</h4>
-                    </div>
-                    <p class="insight-text">
-                        Prices dropping in Central region. Consider value addition or fast sale.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="tip-card">
-            <div class="tip-header">
-                <span class="icon-plant">🌱</span>
-                <h3>Climate-Smart Farming Tip</h3>
-            </div>
-            <p class="tip-content">
-                <strong>Water Harvesting:</strong> With erratic rainfall, ensure you have simple trenches (Fanya Juu/Juu Chini) on sloping land to capture and conserve rainwater. This mitigates drought risk and prevents soil erosion during flash floods. Check your local extension office for specific land contouring advice.
-            </p>
-        </div>
-
+    <div class="cta-section">
+        <h2 class="cta-title">Crop looking unhealthy?</h2>
+        <p class="cta-lead">Don't guess. Get advice from a certified Agronomist.</p>
+        <hr class="divider">
+        <p class="cta-price">Upload a photo of your affected crop. Analysis fee: <strong>KES 50/=</strong></p>
+        
+        <button id="openModalBtn" class="btn btn-primary">
+           👨‍🌾 Consult an Expert Now
+        </button>
     </div>
+
+</div>
+
+<div id="expertModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">New Consultation Request</h5>
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Crop Name</label>
+                    <input type="text" name="crop_name" placeholder="e.g. Maize" required>
+                </div>
+                <div class="form-group">
+                    <label>Describe the problem</label>
+                    <textarea name="description" placeholder="Leaves are turning yellow..." rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload Photo</label>
+                    <input type="file" name="crop_image" required>
+                </div>
+                <div class="form-group">
+                    <label>M-Pesa Phone Number</label>
+                    <input type="text" name="phone" placeholder="07..." required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary full-width">Submit & Pay KES 50</button>
+            </div>
+        </form>
+    </div>
+
+
+
+{% if consultations %}
+<div class="history-container">
+    <h3 class="history-title">Your Consultation History</h3>
+    
+    <div class="history-grid">
+        {% for item in consultations %}
+        <div class="history-card">
+            
+            <div class="history-image-wrapper">
+                {% if item.crop_image %}
+                    <img src="{{ item.crop_image.url }}" alt="{{ item.crop_name }}" class="history-img">
+                {% else %}
+                    <div class="img-placeholder">📷</div>
+                {% endif %}
+            </div>
+
+            <div class="history-content">
+                <div class="history-header">
+                    <div class="header-top">
+                        <span class="crop-badge">{{ item.crop_name }}</span>
+                        <span class="date-badge">{{ item.created_at|date:"M d, Y" }}</span>
+                    </div>
+                    
+                    <div class="header-status">
+                        {% if item.is_paid %}
+                            {% if item.expert_response %}
+                                <span class="status-badge status-resolved">✅ Solved</span>
+                            {% else %}
+                                <span class="status-badge status-pending">⏳ Waiting</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-badge status-unpaid">❌ Unpaid</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="history-body">
+                    <p class="question-text"><strong>Q:</strong> {{ item.problem_description|truncatechars:80 }}</p>
+                    
+                    {% if item.expert_response %}
+                        <div class="expert-answer">
+                            <h5>👨‍🌾 Expert:</h5>
+                            <p>{{ item.expert_response }}</p>
+                        </div>
+                    {% elif not item.is_paid %}
+                        <div class="pay-alert">
+                            <small>Payment Pending</small>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+
+
+
+</div>
+
+<script>
+    // Get elements
+    const modal = document.getElementById("expertModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    // Open Modal
+    openBtn.onclick = function() {
+        modal.style.display = "flex"; // Changed to flex for centering
+    }
+
+    // Close Modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close if user clicks outside the modal box
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 
 

@@ -1,4 +1,4 @@
-🌻 AgriConnect (Django)
+AgriConnect (Django)
 Bridging the gap between farmers, buyers, and agricultural experts.
 
 AgriConnect is a comprehensive digital platform built with Django designed to empower agricultural producers. It creates a direct link between farmers and buyers to eliminate supply chain inefficiencies and provides a vital Expert Advisory service to help farmers diagnose crop diseases quickly.

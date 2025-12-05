@@ -1,14 +1,50 @@
-.sidebar{
-height: 100%;
-width: 250px;
-position: fixed;
-left: 0;
-top: 0;
-background-color: #1a4d2e; 
-color: white;
-font-family: 'Poppins', sans-serif;
 
-}
+.sidebar {
+            width: 260px;
+            background-color: #1b4d3e; /* Your specific Dark Green */
+            color: white;
+            margin: 15px 0 15px 15px; /* Floating margin */
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: calc(80vh - 30px); /* Full height minus margins */
+            position: sticky;
+            top: 15px;
+        }
+
+        .logo-sect{
+            text-align: center;
+            margin: 20px 0 40px 0;
+        }
+
+        .logo-im{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.2);
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff !important;
+            font-weight: 500;
+        }
 .product-list{
     margin-left: 250px;
     display: flex;
@@ -33,42 +69,10 @@ font-family: 'Poppins', sans-serif;
     padding: 0 12px;
 
 }
-.kich{
-    margin-left: 250px;
-}
-.sidebarcontent{
-    
-    margin-left: 40px;
 
-}
-.sidebarcontent a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bolder;
-    transition: all 0.3s ease;
-}
-.sidebarcontent a:hover {
-    
-    padding-left: 5px;   
-    color: rgba(3, 223, 22,0.5);       
-}
-.logo{
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 30px;
-}
-h3{
-    
-    margin-left: 10px;
-}
-.head{
-    display: flex;
-}
+
 .bar{
-    margin-left: 240px;
+    
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -129,11 +133,7 @@ h3{
     height: 50px;
     border-radius: 50%;
 }
-.mcontent{
-    display: flex;
-    margin-left: 250px;
-    
-}
+
 
 
     /* for product display line 327 to 473*/
@@ -150,7 +150,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 30vh;
     display: grid;
     /* This creates columns that are at least 260px wide, 
        but stretch to fill available space */
@@ -161,7 +161,7 @@ h3{
     
     /* Optional: Limit the total width and center the whole grid on page */
     max-width: 1050px;
-    margin: 30px auto;
+    margin: 30px;
     padding: 0 12px;
 }
 
@@ -219,7 +219,7 @@ h3{
 
 /* Content Area */
 .card-details {
-    padding: 12px 16px 16px 16px;
+    padding: 8px 12px 12px 12px;
 }
 
 /* Header Row (Title & Save) */
@@ -243,9 +243,9 @@ h3{
     gap: 6px;
     color: #8898aa;
     font-size: 14px;
-    font-family: 'Merriweather', serif;
+    font-family:  serif;
     font-weight: 300;
-    font-style: italic; /* Slight italic common in serif locations */
+     /* Slight italic common in serif locations */
 }
 
 /* Save Button Styling */
@@ -256,6 +256,7 @@ h3{
     cursor: pointer;
     margin-left: 15px;
     padding-top: 5px; /* Aligns visually with title */
+    
 }
 
 .save-text {
@@ -267,12 +268,8 @@ h3{
     letter-spacing: 0.5px;
 }
 
-/* Divider Line */
-.divider {
-    border: 0;
-    border-top: 1px solid #eef0f2;
-    margin: 15px 0;
-}
+
+
 
 /* Stats Row (Price & Stock) */
 .stats-row {
@@ -356,8 +353,8 @@ h3{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: 24px;
     width: 100%;
-    max-width: 900px;
-    margin-left: 250px;
+  
+    
 }
 
 /* Header Section */
@@ -433,31 +430,7 @@ h3{
     color: #495057;
 }
 
-/* Status Badges */
-.status-badge {
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.status-badge.in-stock {
-    background-color: #e6f9ed;
-    color: #28a745;
-}
-
-.status-badge.low-stock {
-    background-color: #fff3cd;
-    color: #d97706; /* Darker orange text */
-}
-
-.status-badge.out-of-stock {
-    background-color: #ffeaea;
-    color: #dc3545;
-}
-
-/* Action Links */
+/* Status Badges * /* Action Links */
 .actions {
     display: flex;
     gap: 12px;
@@ -488,7 +461,7 @@ h3{
 }
 
 .logout-btn {
-    background: none;
+    background: #c0392b;
     border: none;
     color: #ffcccc; /* Light red/pink to indicate "exit" */
     font-size: 1.1rem;
@@ -501,11 +474,10 @@ h3{
     padding: 10px;
     text-align: left;
     transition: all 0.3s;
+    border-radius: 8px;
 }
 
-.advisory-container{
-    margin-left: 250px;
-}
+
 .cta-section {
     background-color: var(--light-bg);
     border: 1px solid #29e703;

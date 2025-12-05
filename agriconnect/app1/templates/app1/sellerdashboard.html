@@ -2,8 +2,9 @@
 {% block content %}
 {%load static%}
 <link rel="stylesheet" href="{%static 'css/main.css'%}">
-<div class="sellercontent">
-    <div class="inventory-container">
+<link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+<div class="sellercontent flex-grow-1 p-4">
+    <div class="inventory-container ">
         <div class="inventory-header">
             <h2>My Inventory</h2>
             <button><a href="{%url 'add'%}" class="view-all-link">Add item</a></button>

@@ -31,15 +31,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.logo-text {
-    color: #1b5e20; /* Dark Green */
-    font-size: 1.8rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
+
 
 .auth-header h3 {
     color: #555;

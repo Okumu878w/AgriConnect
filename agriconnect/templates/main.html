@@ -6,23 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agriconnect</title>
     <link rel="stylesheet" href="{%static 'css/main.css'%}">
+    <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="head">
-            <img src="{%static 'images/pexels-pixabay-64221.jpg'%}" alt="" class="logo"><h3>Agriconnect</h3>
-        </div>
-        <hr>
-        <div class="sidebarcontent">
-        <a href="{%url 'home'%}" >&#127978; Marketplace</a><br>
-        <a href="{%url 'seller'%}">&#128202; Seller Dashboard</a><br>
-        <a href="{%url 'advise'%}">&#128421; Advisory</a>
-        
-        </div  >
-          
-            <div class="sidebar-footer">
-                <form action="{% url 'logout' %}" method="post">
+
+    
+                
+    {% comment %} 
+    <form action="{% url 'logout' %}" method="post">
   {% csrf_token %}
   <button class="logout-btn" ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -33,25 +25,27 @@
 </form>
             </div>
         
-    </div>
+    </div> {% endcomment %}
 
     <div  class="bar" >
 
     <form class="search" action="{% url 'search_results' %}" method="get" >
         
         <button style="background: none; border: none; cursor: pointer; font-size: 18px;">
-            &#128269;
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
         </button>
         <input type="text" name="q" placeholder="Search products by name,location,category..." style="border: none; outline: none; flex: 1; font-size: 16px;">
     </form>
 <!-- bookmark -->
    <div class="bookmark-container" style="position: relative; display: inline-block;">
     <div class="bookmark-icon" id="bookmark-btn" style="cursor: pointer;">
-        <span style="font-size: 24px;">🏷️</span> 
+        <span style="font-size: 24px;"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1f1f1f"><path d="M200-120v-665q0-24 18-42t42-18h440q24 0 42 18t18 42v665L480-240 200-120Zm60-91 220-93 220 93v-574H260v574Zm0-574h440-440Z"/></svg></span> 
         <span id="bookmark-badge" class="badge" style="background:red; color:white; border-radius:50%; padding: 2px 6px; font-size: 12px; position: absolute; top: -5px; right: -5px;">
             {{ saved_items|length }}
         </span>
+        
     </div>
+    
 
     <div id="bookmark-dropdown" style="display: none; position: absolute; right: 0; background: white; border: 1px solid #ccc; width: 300px; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
         <h4 style="padding: 10px; margin: 0; background: #f4f4f4;">Saved Products</h4>
@@ -73,7 +67,9 @@
             {% endfor %}
         </ul>
     </div>
-</div>
+    
+</div><br>
+
 
     <div class="profile">
         
@@ -88,12 +84,63 @@
       
         
     </div>
+
+
+
     
+       
 
+  </div>
+  <div class="d-flex">
+  <div class="sidebar shadow">
+        <div class="logo-sect">
+            <img src="{%static 'images/pexels-pixabay-64221.jpg'%}" alt="Agriconnect" class="logo-im bg-warning">
+            <h5 class="fw-bold mb-0">Agriconnect</h5>
+        </div>
+
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a href="{%url 'home'%}" class="nav-link ">
+                    <i class="bi bi-shop-window"></i>
+                    <span>Marketplace</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{%url 'seller'%}" class="nav-link">
+                    <i class="bi bi-person-gear"></i>
+                    <span>Seller Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{%url 'advise'%}" class="nav-link">
+                    <i class="bi bi-headset"></i>
+                    <span>Advisory</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+               <form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button class="logout-btn "  ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+        <polyline points="16 17 21 12 16 7"></polyline>
+        <line x1="21" y1="12" x2="9" y2="12"></line>
+    </svg>
+    <span style="margin-left: 8px;">Log Out</span></button>
+</form> 
+            </li>
+        </ul>
+    </div>
+        <!--this is the division for other pages-->
+        <div class="w-100">
+         {%block content%}
+
+         {%endblock%}
+
+        </div>    
+    
 </div>
-{%block content%}
 
-{%endblock%}
     <script>
     // 1. Toggle Dropdown visibility
     document.getElementById('bookmark-btn').addEventListener('click', function() {

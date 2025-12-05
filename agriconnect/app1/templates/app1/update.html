@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Product</title>
+    <style>
+        /* Basic styling for this example */
+        body { font-family: sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding-top: 50px; }
+        .form-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 400px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .btn-save { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-save:hover { background-color: #218838; }
+        .error-list { color: red; font-size: 0.8em; list-style: none; padding: 0; }
+    </style>
 </head>
 <body>
-    <form action="" method="POST" enctype="multipart/form-data" >
-        {%csrf_token%}
-        {{form.as_p}}
-        <button>Update</button>
+      
+    <div class="form-container">
+        <p>Edit  any field and click update product</p>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    
+                    {% if field.errors %}
+                        <ul class="error-list">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
 
-    </form>
+            <button type="submit" class="btn-save">Update Product</button>
+        </form>
+    </div>
     
 </body>
 </html>

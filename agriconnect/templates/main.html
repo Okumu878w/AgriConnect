@@ -53,7 +53,7 @@
             {% for item in saved_items %}
                 <li id="saved-item-{{ item.product.id }}" style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center;">
                     <img src="{{ item.product.image.url }}" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover;">
-                    <div>
+                    <div style="font-family:  sans-serif;">
                         <strong>{{ item.product.name }}</strong><br>
                         <small>{{ item.product.price }}</small><br>
                         <small>{{item.product.phone_number }}</small><br>
@@ -126,7 +126,7 @@
         <polyline points="16 17 21 12 16 7"></polyline>
         <line x1="21" y1="12" x2="9" y2="12"></line>
     </svg>
-    <span style="margin-left: 8px;">Log Out</span></button>
+    <span style="margin-left: 8px;font-family:  sans-serif; ">Log Out</span></button>
 </form> 
             </li>
         </ul>

@@ -7,10 +7,10 @@
 
 <div class="mcontent">
     
-<div class="pdisplay">
+<div class="pdisplay" style="font-family: sans-serif;">
    <!-- for loop here -->
     {%for product in products%}
-    <div class="card"
+    <div class="card "
     data-category="{{ product.category|lower }}" 
          data-location="{{ product.location|lower }}" 
          data-price="{{ product.price }}">
@@ -36,14 +36,14 @@
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        <span style="color: black;font-weight: bold;">{{product.location}}</span>
+                        <span style="color: black;">{{product.location}}</span>
                     </div>
                     
                 </div>
                 
                 <div class="save-btn" style="margin-top: 15px;">
                     
-                    <button onclick="toggleSave({{ product.id }})"><span class="save-text" >SAVE</span>
+                    <button class="rounded-2 border border-success border-opacity-75" onclick="toggleSave({{ product.id }})"><span class="save-text" >SAVE</span>
    </button>
                 </div>
             </div>
